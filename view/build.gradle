@@ -2,23 +2,23 @@ apply plugin: 'com.android.library'
 apply plugin: 'android-maven'
 apply plugin: 'com.jfrog.bintray'
 
-version = "1.0.0"
+version = "1.0.1"
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.2"
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 21
+        targetSdkVersion 26
         versionCode 1
         versionName version
     }
     buildTypes {}
 }
 
-def siteUrl = 'https://github.com/tiwiz/TintedImageView'
-def gitUrl = 'https://github.com/tiwiz/TintedImageView.git'
+def siteUrl = 'https://github.com/dadoz/TintedImageView'
+def gitUrl = 'https://github.com/dadoz/TintedImageView.git'
 group = "it.tiwiz.tintedimageview"
 
 Properties properties = new Properties()
@@ -50,14 +50,14 @@ install {
                 licenses {
                     license {
                         name 'The MIT License (MIT)'
-                        url 'https://github.com/tiwiz/TintedImageView/blob/master/LICENSE'
+                        url 'https://github.com/dadoz/TintedImageView/blob/master/LICENSE'
                     }
                 }
                 developers {
                     developer {
                         id 'tiwiz'
-                        name 'Roberto Orgiu'
-                        email 'roberto.orgiu@gmail.com'
+                        name ''
+                        email ''
                     }
                 }
                 scm {

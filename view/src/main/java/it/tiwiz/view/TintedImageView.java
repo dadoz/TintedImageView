@@ -16,7 +16,7 @@ import android.widget.ImageView;
  * @see #setTint(int) 
  * @see #setTintResource(int)  
  */
-public class TintedImageView extends ImageView{
+public class TintedImageView extends ImageView {
     private static final int DEFAULT_COLOR_RES = android.R.color.holo_blue_bright;
     private int drawableTint;
     
@@ -60,7 +60,7 @@ public class TintedImageView extends ImageView{
         TypedArray a = context.obtainStyledAttributes(attrs,
                 R.styleable.TintedImageView, defStyleAttr, defStyleAttr);
 
-        drawableTint = a.getColor(R.styleable.TintedImageView_tint, getDefaultTintColor());
+        drawableTint = a.getColor(R.styleable.TintedImageView_customTint, getDefaultTintColor());
         a.recycle();
 
         setImageDrawable(getDrawable());

@@ -17,7 +17,7 @@
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/test_image"
-        app:tint="@android:color/holo_green_light"/>
+        app:customTint="@android:color/holo_green_light"/>
     
     <Button
         android:layout_width="match_parent"
