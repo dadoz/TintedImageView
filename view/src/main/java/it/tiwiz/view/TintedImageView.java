@@ -14,12 +14,12 @@ import android.widget.ImageView;
  * {@link android.graphics.drawable.Drawable}.
  * 
  * @see #setTint(int) 
- * @see #setTintResource(int)  
+ * @see #setTintResource(int)
  */
 public class TintedImageView extends ImageView {
     private static final int DEFAULT_COLOR_RES = android.R.color.holo_blue_bright;
     private int drawableTint;
-    
+
     public TintedImageView(Context context) {
         this(context, null);
     }
@@ -30,7 +30,7 @@ public class TintedImageView extends ImageView {
 
     public TintedImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        
+
         if (!isInEditMode()) {
             initTintedImageView(context, attrs, defStyleAttr);
         }
@@ -53,8 +53,8 @@ public class TintedImageView extends ImageView {
 
     /**
      * Initializes the View getting the needed attributes.
-     * In case you fail in setting a <b>tint</b> a bright blue color will be applied because
-     * I like the blue :-D 
+     * In case you fail in setting a <b>customTint</b> a bright blue color will be applied because
+     * I like the blue :-D
      */
     protected void initTintedImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         TypedArray a = context.obtainStyledAttributes(attrs,
@@ -65,7 +65,7 @@ public class TintedImageView extends ImageView {
 
         setImageDrawable(getDrawable());
     }
-    
+
     @Override
     public void setImageDrawable(Drawable drawable) {
         super.setImageDrawable(getTintedDrawable(drawable));
@@ -75,20 +75,20 @@ public class TintedImageView extends ImageView {
      * This method will apply a filter to the given {@link android.graphics.drawable.Drawable}
      * <br/>
      * <b>Note</b>: if you use a <i>white image</i>, the tint color will paint the {@link android.graphics.drawable.Drawable}
-     * as expected. 
+     * as expected.
      */
     protected Drawable getTintedDrawable(Drawable drawable) {
         drawable.setColorFilter(drawableTint, PorterDuff.Mode.SRC_IN);
         return drawable;
     }
-    
+
     protected int getDefaultTintColor() {
-        return getResources().getColor(DEFAULT_COLOR_RES);   
+        return getResources().getColor(DEFAULT_COLOR_RES);
     }
 
     /**
      * This method is called after the tint is changed at runtime, so that you the {@link Drawable} gets
-     * colored instantly. 
+     * colored instantly.
      */
     protected void refresh() {
         setImageDrawable(getDrawable());
@@ -96,8 +96,8 @@ public class TintedImageView extends ImageView {
 
     /**
      * Sets the tint of the {@link Drawable} using the color passed as parameter
-     * 
-     * @see #setTintResource(int)  
+     *
+     * @see #setTint(int)
      */
     public void setTint(int color) {
         drawableTint = color;
@@ -107,8 +107,8 @@ public class TintedImageView extends ImageView {
     /**
      * Sets the tint of the {@link android.graphics.drawable.Drawable} using the {@link android.content.res.Resources}
      * ID passed as parameter
-     * 
-     * @see #setTint(int)  
+     *
+     * @see #setTintResource(int)
      */
     public void setTintResource(int colorResId) {
         drawableTint = getResources().getColor(colorResId);
